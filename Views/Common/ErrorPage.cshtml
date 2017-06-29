@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "页面不存在";
+}
+
+@{Html.RenderAction("Head", "Common", new { pageid = CommonModel.CommonEnum.em_PageID.企业信息 });}
+<div class="business_content">
+    <div class="business_main">
+        <div class="business_pa20">
+            <div class="business_boxnew">
+                <div class="text_center business_pa80">
+                    <img src="http://hr.bjx.com.cn/public/images/error_img.png" />
+                    <p class="public_prompt">页面不存在</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@{Html.RenderAction("Foot", "Common", new { });}

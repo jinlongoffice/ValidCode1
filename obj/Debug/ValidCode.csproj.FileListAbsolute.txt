@@ -1,0 +1,14 @@
+D:\ljl\ValidCode\ValidCode\ValidCode\bin\EnterpriseBackSystem.dll.config
+D:\ljl\ValidCode\ValidCode\ValidCode\bin\EnterpriseBackSystem.dll
+D:\ljl\ValidCode\ValidCode\ValidCode\bin\EnterpriseBackSystem.pdb
+D:\ljl\ValidCode\ValidCode\ValidCode\bin\CommonModel.dll
+D:\ljl\ValidCode\ValidCode\ValidCode\bin\System.Net.Http.Formatting.dll
+D:\ljl\ValidCode\ValidCode\ValidCode\bin\System.Web.Http.dll
+D:\ljl\ValidCode\ValidCode\ValidCode\bin\System.Web.Http.WebHost.dll
+D:\ljl\ValidCode\ValidCode\ValidCode\bin\CommonModel.pdb
+D:\ljl\ValidCode\ValidCode\ValidCode\bin\System.Net.Http.Formatting.xml
+D:\ljl\ValidCode\ValidCode\ValidCode\bin\System.Web.Http.xml
+D:\ljl\ValidCode\ValidCode\ValidCode\bin\System.Web.Http.WebHost.xml
+D:\ljl\ValidCode\ValidCode\ValidCode\obj\Debug\ValidCode.csprojResolveAssemblyReference.cache
+D:\ljl\ValidCode\ValidCode\ValidCode\obj\Debug\EnterpriseBackSystem.dll
+D:\ljl\ValidCode\ValidCode\ValidCode\obj\Debug\EnterpriseBackSystem.pdb

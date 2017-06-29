@@ -1,0 +1,83 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ValidCode</title>
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <style>
+        .captcha-coordinate {
+            position: absolute;
+            width: 20px;
+            height: 24px;
+            line-height: 20px;
+            background: url(../../Images/coordinate.png?v5) 0 0 no-repeat;
+            color: white;
+            font-weight: 700;
+            text-align: center;
+            z-index: 2;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>请按顺序点击大图中的文字</td>
+                <td>
+                    <iframe id="ValidCodeReal" scrolling="no" frameborder="0" src="" style="height: 35px;margin-bottom: 10px;width: 60px;"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="VerificationCodeHtml" style="height: 150px;margin-bottom: 10px;width: 300px;position:absolute;"></div>
+                    <iframe id="ValidCodeClick" frameborder="0" scrolling="no" src="/common/VerificationCodeForClick" style="height: 150px;margin-bottom: 10px;width: 300px;"></iframe>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <form action="/Common/ValidCodeSubmit" enctype="multipart/form-data" method="post">
+        <input type="hidden" id="codeX" name="codeX" value="" />
+        <input type="submit" value="提交" />
+    </form>
+    <script>
+        var countClick = 1;
+        $('#VerificationCodeHtml').click(function (e) {
+            if (countClick == 0) {
+                countClick++;
+                return;
+            } else if (countClick > 2) {
+                return;
+            }
+            if (countClick==1) {
+                $('#codeX').val('');
+            }
+            var positionX = e.pageX - $(this).offset().left; //获取当前鼠标相对img的X坐标
+            var positionY = e.pageY - $(this).offset().top; //获取当前鼠标相对img的Y坐标
+            var dot = '';
+            if ($('#codeX').val() != '') {
+                dot = ',';
+            }
+            $('#codeX').val($('#codeX').val() + dot + positionX);
+            $('#VerificationCodeHtml').html($('#VerificationCodeHtml').html() + '<b class="captcha-coordinate" onclick="myfunction();" style="left: ' + (positionX - 8) + 'px; top: ' + (positionY - 8) + 'px;">' + countClick + '</b>');
+            countClick++;
+        })
+        $('#ValidCodeClick').load(function () {
+            $('#ValidCodeReal').attr('src', '/common/VerificationCodeReal?r=' + Math.random())
+
+        })
+        function myfunction() {
+            $('#VerificationCodeHtml').empty();
+            countClick = 0;
+            $('#codeX').val('');
+        }
+    </script>
+</body>
+</html>
